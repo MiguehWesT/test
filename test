@@ -1,0 +1,48 @@
+def mostrar_menu():
+    print("\nMenú de opciones:")
+    print("1. Añadir valor a la lista")
+    print("2. Eliminar valores repetidos")
+    print("3. Ordenar valores")
+    print("4. Mostrar lista")
+    print("5. Salir")
+
+def añadir_valor(lista):
+    valor = input("Introduce el valor a añadir: ")
+    lista.append(valor)
+    print(f"Valor '{valor}' añadido a la lista.")
+
+def eliminar_repetidos(lista):
+    lista_sin_repetidos = list(set(lista))
+    lista.clear()
+    lista.extend(lista_sin_repetidos)
+    print("Valores repetidos eliminados.")
+
+def ordenar_valores(lista):
+    lista.sort()
+    print("Lista ordenada.")
+
+def mostrar_lista(lista):
+    print("Lista actual:", lista)
+
+def main():
+    lista = []
+    while True:
+        mostrar_menu()
+        opcion = input("Elige una opción: ")
+        
+        if opcion == "1":
+            añadir_valor(lista)
+        elif opcion == "2":
+            eliminar_repetidos(lista)
+        elif opcion == "3":
+            ordenar_valores(lista)
+        elif opcion == "4":
+            mostrar_lista(lista)
+        elif opcion == "5":
+            print("Saliendo del programa.")
+            break
+        else:
+            print("Opción no válida. Inténtalo de nuevo.")
+
+if __name__ == "__main__":
+    main()

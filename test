@@ -3,8 +3,9 @@ def mostrar_menu():
     print("1. Añadir valor a la lista")
     print("2. Eliminar valores repetidos")
     print("3. Ordenar valores")
-    print("4. Mostrar lista")
-    print("5. Salir")
+    print("4. Eliminar un valor de la lista")
+    print("5. Mostrar lista")
+    print("6. Salir")
 
 def añadir_valor(lista):
     valor = input("Introduce el valor a añadir: ")
@@ -20,6 +21,14 @@ def eliminar_repetidos(lista):
 def ordenar_valores(lista):
     lista.sort()
     print("Lista ordenada.")
+
+def eliminar_valor(lista):
+    valor = input("Introduce el valor a eliminar: ")
+    if valor in lista:
+        lista.remove(valor)
+        print(f"Valor '{valor}' eliminado de la lista.")
+    else:
+        print(f"El valor '{valor}' no se encuentra en la lista.")
 
 def mostrar_lista(lista):
     print("Lista actual:", lista)
@@ -37,8 +46,10 @@ def main():
         elif opcion == "3":
             ordenar_valores(lista)
         elif opcion == "4":
-            mostrar_lista(lista)
+            eliminar_valor(lista)
         elif opcion == "5":
+            mostrar_lista(lista)
+        elif opcion == "6":
             print("Saliendo del programa.")
             break
         else:

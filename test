@@ -57,3 +57,115 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+
+alumnos = [
+
+           'Edardo Gaeto',
+
+           'Josis Pala',
+
+           'Milla Ro',
+
+           'Lina Zama',
+
+           'Benn Tran',
+
+           'Kira Chavarria',
+
+           'Cristian Cristiano',
+
+           'Hueichapan Huaichipano'
+
+           ]
+
+
+notas = {}
+
+
+while True:
+
+    print("-- Menu --")
+
+    print("Opcion 1. Mostrar alumnos")
+
+    print("Opcion 2. Asignar nota")
+
+    print("Opcion 3. Promediar")
+
+
+    opcion = int(input("Selecionar una opcion (un numero porfis): "))
+
+
+    if (opcion == 1):
+
+        for alumno in alumnos:
+
+            print(alumno)
+
+
+    if (opcion == 2):
+
+        while True:
+
+            print(notas)
+
+            print("a. Asignar nota individualmnente")
+
+            print("b. Asignar nota a todos")
+
+            print("c. Volver al menu")
+
+            opcion = input("Selecciona caso para notas: ")
+
+            if (opcion == "a"):
+
+                alumno = input("A que alumno le queremos asignar las notas ")
+
+                for nombre in alumnos:
+
+                    if (nombre == alumno):
+
+                        nota = int(input("Ingrese nota de alumno "))
+
+                        notas[alumno] = nota
+
+            if (opcion == "b"):
+
+                for nombre in alumnos:
+
+                    nota = int(input(f"Oe' estamos viendo a este alumno {nombre}, que nota le ponemos al vio "))
+
+                    notas[nombre] = nota
+
+            if (opcion == "c"):
+
+                print("Chaonovimo")
+
+                break
+
+   
+
+    if (opcion == 3):
+
+        if (notas == {}):
+
+            print("Debes ingresar notas")
+
+        else:
+
+            promedio = 0
+
+            contador = 0
+
+            for pasarportodalalistayhaceruncontador in notas:
+
+                contador += 1
+
+                promedio += notas[pasarportodalalistayhaceruncontador]
+
+            print(f"El promedio de todos los vios es {promedio/contador}")
